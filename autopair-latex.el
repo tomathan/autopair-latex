@@ -1,4 +1,6 @@
-;;; autopair-latex.el --- Automatically pair dollar signs and \[,\] for math mode in latex. Without this, math mode does not close on its own and the coloring and formatting of the document gets messed up.
+;;; autopair-latex.el --- Automatically pair dollar signs and \[,\] for math 
+;; mode in latex. Without this, math mode does not close on its own and the
+;; coloring and formatting of the document gets messed up.
 
 ;; Copyright (C) 2011 Tom Guo <tomguo [at] cs.washington.edu>
 
@@ -21,7 +23,12 @@
 
 ;;; Use: 
 ;;
-;; By default, 'C-c \' is bound to '\[','\]'. To initiate math mode, type either '$' or 'C-c \', and emacs will automatically insert both the opening and closing of math mode. Whereever you want math mode to end, type '$' or 'C-c \', and emacs will insert a '$' or '\]' if needed, blink back where math mode began, and move to the point right after end of math mode for you to continue your document in text mode.
+;; By default, 'C-c \' is bound to '\[','\]'. To initiate math mode, type 
+;; either '$' or 'C-c \', and emacs will automatically insert both the opening
+;; and closing of math mode. Whereever you want math mode to end, type '$' or
+;; 'C-c \', and emacs will insert a '$' or '\]' if needed, blink back where
+;; math mode began, and move to the point right after end of math mode for you
+;; to continue your document in text mode.
 
 (defconst *blink-delay* 0.2) ;; used for matching
 

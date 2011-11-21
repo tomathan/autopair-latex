@@ -30,7 +30,7 @@
 ;; math mode began, and move to the point right after end of math mode for you
 ;; to continue your document in text mode.
 
-(defconst *blink-delay* 0.2) ;; used for matching
+(defconst *blink-delay* 0.1) ;; used for matching
 
 (defun count-dollar-signs ()
   "counts number of $'s before point, parity used to determine mode at point"
@@ -132,9 +132,11 @@
     )
 )
 
-(local-set-key (kbd "$") 'dollar-sign)
-(local-set-key (kbd "<backspace>") 'delete-backwards)
-(local-set-key (kbd "C-c \\") 'backslash-bracket)
+(add-hook 'TeX-mode-hook (lambda()
+			     (local-set-key (kbd "$") 'dollar-sign)
+			     (local-set-key (kbd "<backspace>") 'delete-backwards)
+			     (local-set-key (kbd "C-c \\") 'backslash-bracket)
+))
 
 (add-hook 'LaTeX-mode-hook (lambda() 
 			     (local-set-key (kbd "$") 'dollar-sign)
